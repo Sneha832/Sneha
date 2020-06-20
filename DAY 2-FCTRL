@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(void) {
+	int i,n,count,a;
+	scanf("%d",&n);
+	while(n)
+	{
+		scanf("%d",&a);
+		count=0;
+		while(a>=5)
+		{
+			a/=5;
+			count+=a;
+		}
+		printf("%d\n",count);
+		n--;
+	}
+
+	return 0;
+}
