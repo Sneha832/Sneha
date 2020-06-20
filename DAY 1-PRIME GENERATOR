@@ -1,20 +1,43 @@
-#include<stdio.h>
-int main() {
-int n,i,j,k,a,b,flag;
-scanf("%d",&n);
-for(i=0;i<n;i++){
- scanf("%d %d",&a,&b);
- for(j=a;j<=b;j++){
-   if(j==0||j==1)
-      flag=0;
-    else{
-      flag=1;
-      for(k=2;k*k<=j;k++){
-        if(j%k==0){
-        flag=0;
-        break;}}}
-if(flag==1)
-printf("%d ",j);}
-printf("\n");}
-    return 0;
+#include <stdio.h>
+int prime(int n1,int n2);
+int main(void) {
+	int n,i,a,b,c;
+	scanf("%d",&n);
+	while(n)
+	{
+		scanf("%d ",&a);
+		scanf("%d",&b);
+		c=prime(a,b);
+		printf("\n");
+		n--;
+	}
+		return 0;
+}
+int prime(int n1,int n2)
+{
+	int j,k,m,flag,c;
+	for(j=n1;j<=n2;j++)
+	{
+			if(j==0||j==1)
+			{
+				flag=0;
+			}
+			else
+			{
+				flag=1;
+				for(k=2;k*k<=j;k++)
+				{
+					if(j%k==0)
+					{
+						flag=0;
+						break;
+					}
+				}
+			}
+			if(flag==1)
+			{
+				printf("%d ",j);
+			}
+	}
+	return c;
 }
