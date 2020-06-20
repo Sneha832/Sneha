@@ -1,0 +1,32 @@
+#include <stdio.h>
+int rev(int n);
+int add(int a,int b);
+int main(void){
+	int x,i,n1,n2,y,sum;
+	scanf("%d",&x);
+	for(i=0;i<x;i++)
+	{
+		scanf("%d %d",&n1,&n2);
+		n1=rev(n1);
+		n2=rev(n2);
+		y=add(n1,n2);
+		sum=rev(y);
+		printf("%d\n",sum);
+	}
+	return 0;
+}
+int rev(int n){
+	int m=0;
+	while(n)
+	{
+		m=m*10;
+		m=m+(n%10);
+		n=n/10;
+	}
+	return m;
+}
+int add(int a,int b){
+	int sum;
+	sum=a+b;
+	return sum;
+}
