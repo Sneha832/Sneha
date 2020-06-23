@@ -1,0 +1,17 @@
+int maxSubArray(const int* A, int n1) {
+int maxsofar=0,maxendhere=0,i=0;
+while(i<n1)
+{
+    maxendhere=maxendhere+A[i];
+    if(maxsofar<maxendhere)
+    {
+        maxsofar=maxendhere;
+    }
+    if(maxendhere<0)
+    {
+        maxendhere=0;
+    }
+    i++;
+}
+return maxsofar;
+}
