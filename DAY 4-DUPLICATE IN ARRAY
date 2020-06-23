@@ -1,0 +1,16 @@
+int repeatedNumber(const int* A, int n1) {
+    if(n1<=1) 
+       return -1;
+    int a= A[0];
+    int b= A[A[0]];
+    while(a!=b){
+        a=A[a];
+        b=A[A[b]];
+    }
+    a=0;
+    while(a!=b){
+        a=A[a];
+        b=A[b];
+    }
+    return a;
+}
