@@ -1,17 +1,13 @@
 int maxSubArray(const int* A, int n1) {
-int maxsofar=0,maxendhere=0,i=0;
-while(i<n1)
-{
-    maxendhere=maxendhere+A[i];
-    if(maxsofar<maxendhere)
-    {
-        maxsofar=maxendhere;
+    int max_so_far = INT_MIN, max_ending_here = 0;
+    int i;
+    for (i = 0; i < n1; i++){
+        max_ending_here = max_ending_here + A[i];
+        if (max_so_far < max_ending_here)
+            max_so_far = max_ending_here;
+ 
+        if (max_ending_here < 0)
+            max_ending_here = 0;
     }
-    if(maxendhere<0)
-    {
-        maxendhere=0;
-    }
-    i++;
-}
-return maxsofar;
+    return max_so_far;
 }
